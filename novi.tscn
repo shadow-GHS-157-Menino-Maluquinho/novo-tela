@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://jp27qy7cnttu"]
+
+[ext_resource type="PackedScene" uid="uid://cbh71jiybv0x0" path="res://TESTE.tscn" id="1_gb5gk"]
+[ext_resource type="PackedScene" uid="uid://cj0mo23ddu1t3" path="res://tela_view.tscn" id="2_prfp0"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="NODE TELA" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="NODE TELA"]
+
+[node name="SubViewport" type="SubViewport" parent="NODE TELA/Sprite3D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="NODE TELA/Sprite3D/SubViewport"]
+
+[node name="Control" parent="NODE TELA/Sprite3D/SubViewport/CanvasLayer" instance=ExtResource("1_gb5gk")]
+visible = false
+
+[node name="tela_modo" parent="NODE TELA/Sprite3D/SubViewport/CanvasLayer" instance=ExtResource("2_prfp0")]
+visible = false

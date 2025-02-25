@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://n30k2lii7tvh"]
+
+[ext_resource type="PackedScene" uid="uid://cbh71jiybv0x0" path="res://TESTE.tscn" id="1_egdgu"]
+[ext_resource type="PackedScene" uid="uid://cj0mo23ddu1t3" path="res://tela_view.tscn" id="1_iooss"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qqwak"]
+friction = 0.95
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yuxgd"]
+size = Vector3(1, 0.800171, 0.931641)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0lwys"]
+size = Vector3(60, 0, 60)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_044u3"]
+viewport_path = NodePath("Node3D/tela test 1/Sprite3D/SubViewporta")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8whe4"]
+viewport_path = NodePath("Node3D/tela test 2/Sprite3D/SubViewport")
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.293028, -0.40495, 7.64496)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+visible = false
+physics_material_override = SubResource("PhysicsMaterial_qqwak")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(60, 0, 0, 0, 0.1, 0, 0, 0, 60, -0.081, -0.289, 0.075)
+shape = SubResource("BoxShape3D_yuxgd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.74846e-07, 0, -1.74846e-07, 1, -0.0807361, -0.288915, 0.0750732)
+mesh = SubResource("BoxMesh_0lwys")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 1.74846e-07, 0, -1.74846e-07, 1, -36.9514, 71.3104, 114.563)
+visible = false
+shadow_enabled = true
+shadow_bias = 0.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.359072, 0.667595, 2.16587)
+visible = false
+fov = 131.741
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="tela test 1" type="Node3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.437266, -0.452691, -1.06843)
+
+[node name="Sprite3D" type="Sprite3D" parent="Node3D/tela test 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90014, 1.6127, 21.1198)
+pixel_size = 0.0101
+texture = SubResource("ViewportTexture_044u3")
+region_enabled = true
+region_rect = Rect2(-10.5013, -24.1396, 1528.58, 770.807)
+
+[node name="SubViewporta" type="SubViewport" parent="Node3D/tela test 1/Sprite3D"]
+transparent_bg = true
+scaling_3d_scale = 1.27
+size = Vector2i(1500, 720)
+size_2d_override_stretch = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Node3D/tela test 1/Sprite3D/SubViewporta"]
+
+[node name="tela_modo" parent="Node3D/tela test 1/Sprite3D/SubViewporta/CanvasLayer" instance=ExtResource("1_iooss")]
+
+[node name="tela test 2" type="Node3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.437266, -0.452691, -1.06843)
+
+[node name="Sprite3D" type="Sprite3D" parent="Node3D/tela test 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4549, 1.68844, 21.0274)
+modulate = Color(1, 1, 1, 0.482353)
+pixel_size = 0.0101
+texture = SubResource("ViewportTexture_8whe4")
+region_enabled = true
+region_rect = Rect2(113.628, 184.07, 257.87, 180.147)
+
+[node name="SubViewport" type="SubViewport" parent="Node3D/tela test 2/Sprite3D"]
+transparent_bg = true
+scaling_3d_scale = 1.27
+size_2d_override_stretch = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Node3D/tela test 2/Sprite3D/SubViewport"]
+
+[node name="Control" parent="Node3D/tela test 2/Sprite3D/SubViewport/CanvasLayer" instance=ExtResource("1_egdgu")]
+visible = false
