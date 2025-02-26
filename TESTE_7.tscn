@@ -19,7 +19,7 @@ viewport_path = NodePath("Node3D/tela test 1/Sprite3D/SubViewporta")
 viewport_path = NodePath("Node3D/tela test 2/Sprite3D/SubViewport")
 
 [node name="Node3D" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.293028, -0.40495, 7.64496)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 8, -10)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 visible = false
@@ -40,17 +40,18 @@ shadow_enabled = true
 shadow_bias = 0.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.359072, 0.667595, 2.16587)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.707, -2.59505, 0.35504)
 visible = false
 fov = 131.741
 
 [node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.001, 0, 0, 0)
 
 [node name="tela test 1" type="Node3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.437266, -0.452691, -1.06843)
 
 [node name="Sprite3D" type="Sprite3D" parent="Node3D/tela test 1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90014, 1.6127, 21.1198)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.192, -6.50017, -22763.2)
 pixel_size = 0.0101
 texture = SubResource("ViewportTexture_044u3")
 region_enabled = true
